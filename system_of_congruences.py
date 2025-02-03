@@ -52,7 +52,7 @@ def crt_solve(congruences):
         # Run a loop to calculate Mi, yi(modular inverse of Mi), and the product of ri, Mi, and yi.
         # Get the sum of all riMiyi mod M.
         for i in range(len(ri)):
-            Mi = int(math.prod(m_val) / m_val[i])
+            Mi = math.prod(m_val) // m_val[i]
             yi = pow(Mi, -1, m_val[i])
             rmy = ri[i] * Mi * yi
             rmy_set.append(rmy)
